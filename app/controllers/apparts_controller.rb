@@ -1,4 +1,5 @@
 class AppartsController < ApplicationController
-def index
-end
+  def index
+    @apparts = Appart.all
+  end
 end
