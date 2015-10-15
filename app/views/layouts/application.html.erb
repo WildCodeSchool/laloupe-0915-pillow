@@ -3,23 +3,37 @@
 <head>
   <title>Pillow</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/assets/stylesheets/styles-victor.css">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <p class="navbar-text pull-right"> POUET
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
+  <p class="navbar-text pull-right">
 
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-2"><a href="#">Logo</a></div>
+          <div class="col-lg-2"></div>
+          <div class="col-lg-1"><a href="#">Notifs</a></div>
+          <div class="col-lg-1"><a href="#">Profile</a></div>
+          <div class="col-lg-1"><a href="#">About</a></div>
+          <div class="col-lg-2"><a href="#">Become a Host</a></div>
+          <div class="col-lg-2">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+            <% end %>
+          </div>
+        </div>
 <%= yield %>
+
 
 </body>
 </html>

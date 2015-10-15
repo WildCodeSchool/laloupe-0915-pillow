@@ -1,0 +1,43 @@
+<h1><%=@appart.title%></h1>
+  <div class="row">
+    <div class="col-lg-6"style="overflow:scroll; text-align:left; line-height:25px; height: 700px">
+      <div class="row">
+        <div class="col-md-12" style="height:30px"></div>
+      </div>
+          <h2>Description de mon bien</h2>
+          <p> insertion ici d'un champ de texte</p>
+      <div class="row">
+        <div class="col-lg-4" style="text-align:left">
+          <ul>
+            <li>Type de logement: <%=@appart.property_type %></li>
+            <li>Capacité d'accueil: <%=@appart.accommodates%></li>
+            <li>Nombre de chambres: <%=@appart.bedroom_nb%></li>
+            <li>Nombre de lits: <%=@appart.beds_nb%></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4" style="text-align:left">
+          <ul>
+            <li>Fournitures: <%=@appart.amenities%></li>
+            <li>Adresse: <%=@appart.adress%></li>
+          </ul>
+          <div class="col-lg-2"></div>
+        </div>
+      </div>
+      <h2>Le prix</h2>
+      <div class="row">
+        <div class="col-md-12" style="text-align:left">
+          <p> <%=@appart.price%> </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6" style="line-height:25px; height: 700px">
+      Insertion d'un outil d'upload de photos grace à la gem paperclip
+      <div class="row">
+        <div class="col-md-8">je valide les conditions et cgu.</div>
+        <div class="col-md-4">Boutton soumettre Bien</div>
+      </div>
+    </div>
+
+  </div>
