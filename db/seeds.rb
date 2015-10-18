@@ -5,6 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create([{ email: 'tata@toto.com',
+              password: 'jecode4laloupe',
+              password_confirmation: 'jecode4laloupe',
+              name: 'tata',
+              gender:'',
+              date_birth: '31/08/1982',
+              phone: '',
+              adress: '',
+              zip_code: '',
+              town: '',
+              country:'',
+              role_guest:'',
+              role_host: '',
+              role_both:'',
+              description:'',
+              langage:'',
+              photos:'',
+  }])
 Appart.create([{ room_type: true,
                 property_type: 'Appartement',
                 accommodates: 4,
