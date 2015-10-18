@@ -19,7 +19,7 @@
           <div class="row">
             <div class="col-md-6">
             <% @apparts.each do |appart| %>
-              <a href="appart/<%= appart.id%>"><%= appart.title %>
+              <a href="/appart/<%= appart.id%>"><%= appart.title %>
                 <div class="thumbnail"><img src="<%= appart.images%>" alt="" style= "width:300px"/>
                   <%= appart.price%>
                 </div>
