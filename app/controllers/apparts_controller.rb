@@ -12,6 +12,10 @@ class AppartsController < ApplicationController
       query = "%#{params[:query]}%"
       @apparts = Appart.where("city like ?", query)
     end
+    @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
+    marker.lat appart.latitude
+    marker.lng appart.longitude
+end
   end
 
   def bien

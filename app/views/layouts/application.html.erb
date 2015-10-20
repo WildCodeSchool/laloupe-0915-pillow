@@ -3,8 +3,8 @@
 <head>
   <title>Pillow</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="app/assets/stylesheets/styles-victor.css">
-
+  <link rel="stylesheet" href="app/assets/stylesheets/styles-victor.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,7 +17,7 @@
         <div class="row">
           <div class="row">
             <div class="col-lg-2 "><a href="#">Logo</a></div>
-            <% if user_signed_in? && controller_name != "homes" %><!-- condition pour que la recherche n'apparaisse pas dans la page hom -->
+            <% if controller_name != "homes" %><!-- condition pour que la recherche n'apparaisse pas dans la page hom -->
               <div class="col-lg-3">
                   <%= form_tag('/apparts/index', :method => :get) do -%> <!--method get car de base form_tag a une method post -->
                     <div><%= text_field_tag 'query', nil, placeholder: "Où allez vous ?" %><%= submit_tag 'Go' %></div>
