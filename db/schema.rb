@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020183839) do
+ActiveRecord::Schema.define(version: 20151021141339) do
 
   create_table "apparts", force: :cascade do |t|
     t.boolean  "room_type"
@@ -31,7 +31,10 @@ ActiveRecord::Schema.define(version: 20151020183839) do
     t.datetime "updated_at",    null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "user_id"
   end
+
+  add_index "apparts", ["user_id"], name: "index_apparts_on_user_id"
 
   create_table "homes", force: :cascade do |t|
     t.text     "post"
