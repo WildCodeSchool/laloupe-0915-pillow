@@ -13,8 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-/* Formumlaire */
-=require formtastic
-=require my_formtastic_changes
-= require formtastic-bootstrap
