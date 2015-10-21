@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   root "apparts#index"
+  resources :apparts do 
+    collection do 
+      get 'host'
+    end 
+  end
+  post 'apparts/index' => 'apparts#index'
   get "apparts/index" => 'apparts#index'
   get 'appart/:id' => 'apparts#bien'
   resources :homes

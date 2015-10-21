@@ -6,15 +6,14 @@ class UsersController < ApplicationController
   	@user = current_user
   end
 
-
   def index
   end
 
   def create
   	if @user.save
-     redirect_to user_path
+      redirect_to user_path
   	else
-     render :new
+      render :new
   	end
   end
 

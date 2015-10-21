@@ -6,6 +6,7 @@ class AppartsController < ApplicationController
       # blank? fini par un ? => il s'agit donc d'une méthode retournant un booléen
       @apparts = Appart.all
     else
+      binding.pry
       # NE PAS UTILISER Appart.where("city like '%#{params[:query]}%'")
       # car on insère le params[:query] qui est une valeur fourni par l'utilisateur
       # directement dans une requête SQL => risque d'injection SQL => faille de sécu
@@ -18,8 +19,14 @@ class AppartsController < ApplicationController
     end  
   end
 
+
   def bien
     @appart = Appart.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def appart_params
+    params.require(:appart).permit(:adress, :room_type, :property_type, :accommodates, :city, :title, :bedroom_nb, :beds_nb, :price, :zip_code, :country, :amenities, :images) 
   end
 
 end

@@ -1,0 +1,33 @@
+<h1> Become a Host</h1>
+
+<%= form_for(@appart) do |f| %>
+
+  <%= f.label "Photos" %>
+  <%= f.text_field :images %> </br>
+  <%= f.label "Quelle loc" %>
+  <%= f.text_field :room_type %> </br>
+  <%= f.label "Type de bien" %>
+  <%= f.text_field :property_type %> </br>
+  <%= f.label "Nombre de personne" %>
+  <%= f.text_field :accommodates %></br>
+  <%= f.label "Ville" %>
+  <%= f.text_field :city %> </br>
+  <%= f.label "Titre" %>
+  <%= f.text_field :title %> </br>
+  <%= f.label "Nombre de chambre" %>
+  <%= f.text_field :bedroom_nb %> </br>
+  <%= f.label "Nombre de lit" %>
+  <%= f.text_field :beds_nb %> </br>
+  <%= f.label "Prix" %>
+  <%= f.text_field :price %> </br>
+  <%= f.label "Adresse" %>
+  <%= f.text_field :adress %> </br>
+  <%= f.label "Code postal" %>
+  <%= f.text_field :zip_code %> </br>
+  <%= f.label "Pays" %>
+  <%= f.text_field :country %> </br>
+  <%= f.label "Services en plus" %>
+  <%= f.text_field :amenities %> </br>
+
+  <%= submit_tag 'Submit'%>
+<% end %>
