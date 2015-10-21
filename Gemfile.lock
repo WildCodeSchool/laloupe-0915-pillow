@@ -60,12 +60,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.6.0)
-<<<<<<< HEAD
-    formtastic (3.1.3)
-      actionpack (>= 3.2.13)
-=======
     geocoder (1.2.11)
->>>>>>> 86da61b31dafadd73bff39049fd3c629f127e091
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)

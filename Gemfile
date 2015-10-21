@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 
-gem 'pry'
-gem 'formtastic', '~> 3.0' # => Formulaire
 
 gem 'gmaps4rails'
 gem 'geocoder'
