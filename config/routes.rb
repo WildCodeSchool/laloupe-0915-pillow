@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   root "apparts#index"
+  get "apparts/index" => 'apparts#index'
   get 'appart/:id' => 'apparts#bien'
   resources :homes
   # The priority is based upon order of creation: first created -> highest priority.
