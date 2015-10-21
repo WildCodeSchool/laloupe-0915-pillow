@@ -15,7 +15,7 @@ class AppartsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
     marker.lat appart.latitude
     marker.lng appart.longitude
-end
+    end  
   end
 
   def bien
