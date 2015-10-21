@@ -3,8 +3,9 @@ class UsersController < ApplicationController
   #before_action :set_home, only: [:show, :edit, :update, :destroy]
 
   def edit 
-  	@user = User.new
+  	@user = current_user
   end
+
 
   def index
   end
@@ -12,19 +13,27 @@ class UsersController < ApplicationController
   def create
   	if @user.save
      redirect_to user_path
-   else
+  	else
      render :new
   	end
   end
 
   def show
-    @users = User.find(params[:id])
-    render "devise/confirmations/show"
+    @user = User.find(current_user.id)
   end
 
   def update
-  	render "devise/confirmations/update"
-  	@users = User.find(params[:id])
+  	@user = current_user.update(user_params)
+  	if @user
+  		redirect_to user_path(current_user.id)
+  	else 
+  		render :edit
+  	end
+	end
+
+	private
+	def user_params
+		params.require(:user).permit(:name, :surname, :date_birth, :gender, :phone, :adress, :zip_code, :town, :description, :langage, :photos)
   end
 
 end

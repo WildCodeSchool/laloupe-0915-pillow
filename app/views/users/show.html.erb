@@ -1,0 +1,33 @@
+
+<div class="container-fluid">
+    </div>
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">Mon profil</div>
+      <div class="col-lg-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3"><img src="http://lorempixel.com/400/700/"/></div>
+       <div class="col-lg-6">
+       <img> <%=@user.photos %></img></br>
+          <%=@user.name %></br>
+          <%=@user.surname %></br>
+          <%=@user.date_birth %></br>
+          <%=@user.gender %></br>
+          <%=@user.phone %></br>
+          <%=@user.adress %></br>
+          <%=@user.zip_code %></br>
+          <%=@user.town %></br>
+          <%=@user.description %></br>
+          <%=@user.langage %></br>
+        </div>
+      <div class="col-lg-3">
+      <img src="http://lorempixel.com/400/700/"/>
+      
+
+        </div>
+    </div>
+  </div>
+
+<%= link_to "Back", :back %>
+

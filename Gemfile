@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry'
 gem 'formtastic', '~> 3.0' # => Formulaire
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
