@@ -8,10 +8,48 @@
       <div class="col-lg-2"></div>
     </div>
     <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">Insérer ici formulaire de profil user</div>
-        <div class="col-lg-3"></div>
+      <div class="col-lg-3"><img src="http://lorempixel.com/400/700/"/></div>
+       <div class="col-lg-6">
+        <p>Insérer ici formulaire de profil user</p>
+
+        <%= form_for(@user) do |f| %>
+
+            <%= f.label "Name" %>
+            <%= f.text_field :name %> </br>
+            <%= f.label "Surname" %>
+            <%= f.text_field :surname %> </br>
+            <%= f.label "Date of birth" %>
+            <%= f.text_field :date_birth %> </br>
+            <%= f.label "Gender" %>
+            <%= f.text_field :gender %></br>
+            <%= f.label "Phone" %>
+            <%= f.text_field :phone %> </br>
+            <%= f.label "adress" %>
+            <%= f.text_field :adress %> </br>
+            <%= f.label "Zip code" %>
+            <%= f.text_field :zip_code %> </br>
+            <%= f.label "Town" %>
+            <%= f.text_field :town %> </br>
+            <%= f.label "description" %>
+            <%= f.text_field :description %> </br>
+            <%= f.label "langage" %>
+            <%= f.text_field :langage %> </br>
+            <%= f.label "Photos" %>
+            <%= f.text_field :photos %> </br>
+            
+            
+            <%= f.submit "Submit" %> 
+           
+        </div>
+      <div class="col-lg-3">
+      <img src="http://lorempixel.com/400/700/"/>
+      
+
+        </div>
     </div>
   </div>
 
 <%= link_to "Back", :back %>
+
+
+  <% end %>
