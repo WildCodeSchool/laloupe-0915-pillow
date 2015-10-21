@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
   # Overwriting the sign_out redirect path method
   def after_sign_out_path_for(resource_or_scope)
-    homes_path #/route nommée =>> renvoie sur /homes pour le logout
+    homes_path #/route nommée =>> renvoie sur /homes pour le logout 
   end
 end
