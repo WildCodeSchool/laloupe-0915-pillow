@@ -164,12 +164,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
-<<<<<<< HEAD
-  formtastic (~> 3.0)
-=======
   geocoder
   gmaps4rails
->>>>>>> 86da61b31dafadd73bff39049fd3c629f127e091
   jbuilder (~> 2.0)
   jquery-rails
   pry
