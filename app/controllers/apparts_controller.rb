@@ -6,7 +6,6 @@ class AppartsController < ApplicationController
       # blank? fini par un ? => il s'agit donc d'une méthode retournant un booléen
       @apparts = Appart.all
     else
-      binding.pry
       # NE PAS UTILISER Appart.where("city like '%#{params[:query]}%'")
       # car on insère le params[:query] qui est une valeur fourni par l'utilisateur
       # directement dans une requête SQL => risque d'injection SQL => faille de sécu
@@ -17,8 +16,24 @@ class AppartsController < ApplicationController
     marker.lat appart.latitude
     marker.lng appart.longitude
     end  
+
   end
 
+
+
+  def create
+  @appart = Appart.new(appart_params)
+    if @appart.save
+      redirect_to  "/appart/#{@appart.id}"
+    else
+      @appart = "Submit"
+      render :new
+    end
+  end   
+
+  def host
+    @appart = Appart.new
+  end
 
   def bien
     @appart = Appart.find(params[:id])
