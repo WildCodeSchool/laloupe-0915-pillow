@@ -16,10 +16,32 @@ class AppartsController < ApplicationController
     marker.lat appart.latitude
     marker.lng appart.longitude
     end  
+
+  end
+
+
+
+  def create
+  @appart = Appart.new(appart_params)
+    if @appart.save
+      redirect_to  "/appart/#{@appart.id}"
+    else
+      @appart = "Submit"
+      render :new
+    end
+  end   
+
+  def host
+    @appart = Appart.new
   end
 
   def bien
     @appart = Appart.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def appart_params
+    params.require(:appart).permit(:adress, :room_type, :property_type, :accommodates, :city, :title, :bedroom_nb, :beds_nb, :price, :zip_code, :country, :amenities, :images) 
   end
 
 end
