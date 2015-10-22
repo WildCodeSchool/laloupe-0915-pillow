@@ -3,13 +3,17 @@
     </div>
     <div class="row">
       <div class="col-lg-2"></div>
-      <div class="col-lg-8">Mon profil</div>
+      <div class="col-lg-8">
+        <h3>Mon profil</h3>
+      </div>
       <div class="col-lg-2"></div>
     </div>
     <div class="row">
-      <div class="col-lg-3"><img src="http://lorempixel.com/400/700/"/></div>
+      <div class="col-lg-3">
+      <h3> Mes réservations</h3>
+      </div>
        <div class="col-lg-6">
-       <img> <%=@user.photos %></img></br>
+       <img src="<%=@user.photos %>"/></br>
           <%=@user.name %></br>
           <%=@user.surname %></br>
           <%=@user.date_birth %></br>
@@ -22,9 +26,22 @@
           <%=@user.langage %></br>
         </div>
       <div class="col-lg-3">
-      <img src="http://lorempixel.com/400/700/"/>
-      
 
+
+        <h3> Mes locations </h3>
+
+          <% if @user.apparts.nil?%>
+          <p> Vous n'avez pas encore de location </p>
+          <% else %>
+            <% @user.apparts.each do |appart| %>
+           <a href="/appart/<%= appart.id%>"><%= appart.title %></br>
+            <img src="<%= appart.images %>"width="200" height="200"/></br>
+            <%= appart.price %>€</br>
+
+            <button type="button">Editer mon annonce</button></br>
+            <%end%>
+
+          <%end%>
 
         </div>
     </div>

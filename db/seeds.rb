@@ -76,7 +76,7 @@ Appart.create([{ room_type: true,
                 country: 'France',
                 amenities: "PQ / Serviettes / TV / Internet",
                 images:'http://www.bright-immobilier.com/wp-content/uploads/appartement-paris_8-rue-jean-mermoz_01-950x534.jpg', 
-
+                user_id: 1,
   }])
 
 Appart.create([{ room_type: true,
@@ -92,7 +92,7 @@ Appart.create([{ room_type: true,
                 country: 'France',
                 amenities: "PQ / Serviettes / TV / Internet",
                 images:'http://www.egr-renovation.com/images/post-images/renovation-appartement-paris-15.jpg', 
-
+                user_id: 2,
   }])
 Appart.create([{ room_type: true,
                 property_type: 'Appartement',
@@ -107,7 +107,7 @@ Appart.create([{ room_type: true,
                 country: 'France',
                 amenities: "PQ / Serviettes / TV / Internet",
                 images:'http://www.appartement-paris-vacances.fr/photos/9709.jpg', 
-
+                user_id: 1,
   }])
 Appart.create([{ room_type: true,
                 property_type: 'Maison',
@@ -122,5 +122,5 @@ Appart.create([{ room_type: true,
                 country: 'France',
                 amenities: "PQ / Serviettes / TV / Internet",
                 images:'http://referentiel.nouvelobs.com/file/5677948.jpg', 
-
+                user_id: 1,
   }])
