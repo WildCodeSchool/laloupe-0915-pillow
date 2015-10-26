@@ -14,6 +14,10 @@ class CreateApparts < ActiveRecord::Migration
       t.string :country
       t.string :amenities
       t.string :images
+      t.string :images1
+      t.string :images2
+      t.string :images3
+      t.string :images4
       t.timestamps null: false
     end
   end

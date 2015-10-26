@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20151021120915) do
     t.string   "country"
     t.string   "amenities"
     t.string   "images"
+    t.string   "images1"
+    t.string   "images2"
+    t.string   "images3"
+    t.string   "images4"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.float    "latitude"
