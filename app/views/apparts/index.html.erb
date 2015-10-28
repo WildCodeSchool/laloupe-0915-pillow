@@ -10,9 +10,9 @@
           <button><%= link_to "order by accommodates", apparts_byaccommodates_path(params[:query]) %></button>
 
           <div class="row">
-            
+
             <!-- affichage de tous les biens -->
-            <div class="col-md-6"> 
+            <div class="col-md-12"> 
             <% @apparts.each do |appart| %>
                 <a href="/appart/<%= appart.id%>"><%= appart.title %>
                 <div class="thumbnail"><img src="<%= appart.images%>" alt="" style= "width:300px"/>
@@ -39,7 +39,6 @@
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });
-    </script> 
+    </script>
   </div>
 </div>
-
