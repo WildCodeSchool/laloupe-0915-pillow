@@ -1,9 +1,19 @@
 <h1> Become a Host</h1>
 
 <%= form_for(@appart) do |f| %>
-
-  <%= f.label "Photos" %>
+<h3>Les annonces avec de bonnes photos sont 40 fois plus efficaces !
+Pour exporter une photo, allez sur ce <a href="http://imgur.com/">Lien</a> et copier l'url génrée dans les champs ci-dessous</h3>
+  <%= f.label "Photo 1" %>
   <%= f.text_field :images %> </br>
+  <%= f.label "Photos 2" %>
+  <%= f.text_field :images1 %> </br>
+  <%= f.label "Photo 3" %>
+  <%= f.text_field :images2 %> </br>
+  <%= f.label "Photo 4" %>
+  <%= f.text_field :images3 %> </br>
+  <%= f.label "Photo 5" %>
+  <%= f.text_field :images4 %> </br>
+
   <%= f.label "Quelle loc" %>
   <%= f.text_field :room_type %> </br>
   <%= f.label "Type de bien" %>

@@ -1,7 +1,7 @@
 class AppartsController < ApplicationController
-  
+
   def index
-    if params[:query].blank?  
+    if params[:query].blank?
       # blank? => méthode rails pour préciser que la valeur est vide
       # blank? fini par un ? => il s'agit donc d'une méthode retournant un booléen
       @apparts = Appart.all
@@ -15,7 +15,7 @@ class AppartsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
     marker.lat appart.latitude
     marker.lng appart.longitude
-    end  
+    end
 
   end
 
@@ -29,7 +29,7 @@ class AppartsController < ApplicationController
       @appart = "Submit"
       render :new
     end
-  end   
+  end
 
   def host
     @appart = Appart.new
@@ -41,7 +41,7 @@ class AppartsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def appart_params
-    params.require(:appart).permit(:adress, :room_type, :property_type, :accommodates, :city, :title, :bedroom_nb, :beds_nb, :price, :zip_code, :country, :amenities, :images) 
+    params.require(:appart).permit(:adress, :room_type, :property_type, :accommodates, :city, :title, :bedroom_nb, :beds_nb, :price, :zip_code, :country, :amenities, :images, :image1, :images2, :images3, :images4) 
   end
 
 end
