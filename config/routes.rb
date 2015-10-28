@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users
   root "apparts#index"
   get "apparts/index" => 'apparts#index'
+  get '/apparts/byprice' => "apparts#byprice"
+  get '/apparts/byaccommodates' => "apparts#byaccommodates"
   resources :apparts do 
     collection do 
       get 'host'
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
   end
   post 'apparts/index' => 'apparts#index'
   get 'appart/:id' => 'apparts#bien'
-  resources :homes
+    resources :homes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

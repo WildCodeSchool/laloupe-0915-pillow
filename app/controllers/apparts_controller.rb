@@ -11,16 +11,41 @@ class AppartsController < ApplicationController
       # directement dans une requête SQL => risque d'injection SQL => faille de sécu
       query = "%#{params[:query]}%"
       @apparts = Appart.where("city like ?", query)
+      @categories
     end
     @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
     marker.lat appart.latitude
     marker.lng appart.longitude
-    end
+    end  
 
   end
 
+ def byprice
+  if params[:format] != nil
+    @apparts = Appart.where(city: params[:format].titleize)
+    @byprice = @apparts.sort_by{|apt| apt.price}
+  else
+    @byprice = Appart.all.sort_by {|apt| apt.price}
+  end
+   @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
+    marker.lat appart.latitude
+    marker.lng appart.longitude
+    end  
+ end
 
-
+  def byaccommodates
+    if params[:format] != nil
+        @apparts = Appart.where(city: params[:format].titleize)
+        @byaccommodates = @apparts.sort_by{|apt| apt.accommodates}
+      else
+        @byaccommodates = Appart.all.sort_by {|apt| apt.accommodates}
+      end 
+    @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
+    marker.lat appart.latitude
+    marker.lng appart.longitude
+    end  
+  end
+  
   def create
   @appart = Appart.new(appart_params)
     if @appart.save
