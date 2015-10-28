@@ -17,18 +17,34 @@ class AppartsController < ApplicationController
     marker.lat appart.latitude
     marker.lng appart.longitude
     end  
- 
   end
 
  def byprice
-  @byprice = Appart.all.sort_by {|apt| apt.price}
-  @param1 = "%#{params[:query]}%"
- # @byprice = Appart.all.sort_by {|apt| apt.price}
+  if params[:format] != nil
+    @apparts = Appart.where(city: params[:format].titleize)
+    @byprice = @apparts.sort_by{|apt| apt.price}
+  else
+    @byprice = Appart.all.sort_by {|apt| apt.price}
+  end
+   @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
+    marker.lat appart.latitude
+    marker.lng appart.longitude
+    end  
  end
 
   def byaccommodates
-    @byaccommodates = Appart.all.sort_by {|apt| apt.accommodates}
+    if params[:format] != nil
+        @apparts = Appart.where(city: params[:format].titleize)
+        @byaccommodates = @apparts.sort_by{|apt| apt.accommodates}
+      else
+        @byaccommodates = Appart.all.sort_by {|apt| apt.accommodates}
+      end 
+    @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
+    marker.lat appart.latitude
+    marker.lng appart.longitude
+    end  
   end
+  
   def create
   @appart = Appart.new(appart_params)
     if @appart.save

@@ -6,11 +6,9 @@
     <div class="row">
       <div class="col-lg-6" id="search1" style="overflow:scroll">
         <div class="container-fluid">
-          <button> <%= link_to "order by price", apparts_byprice_path(:param1 => "query") %></button>
-          <button><%= link_to "order by accommodates", apparts_byaccommodates_path %></button>
+          <button> <%= link_to "order by price", apparts_byprice_path(params[:query]) %></button>
+          <button><%= link_to "order by accommodates", apparts_byaccommodates_path(params[:query]) %></button>
 
-         
-         
           <div class="row">
             
             <!-- affichage de tous les biens -->

@@ -10,21 +10,20 @@
 	        <%= link_to "order by price", apparts_byprice_path %>
 	        </button>
 	     	<button>
-	     	<%= link_to "order by accommodates", apparts_byaccommodates_path %>
+	     	<%= link_to "order by accommodates", apparts_byaccommodates_path(params[:format]) %>
 	     	</button>
           <div class="row">
            
 			<!-- affichage des biens par prix -->
             <div class="col-md-6"> 
-           	<% @byprice.each do |appart|%>
+           	<% @byprice.each do |appart| %>
            		<a href="/appart/<%= appart.id%>"><%= appart.title %>
                 <div class="thumbnail"><img src="<%= appart.images%>" alt="" style= "width:300px"/>
                   <%= appart.price%> </br>
                    <%= appart.accommodates%> voyageurs
                 </div>
-                </a>
-            <% end%>
-  	
+              </a>
+            <% end %>
           </div>
         </div>
       </div>
