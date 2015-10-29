@@ -17,7 +17,6 @@ class AppartsController < ApplicationController
     marker.lat appart.latitude
     marker.lng appart.longitude
     end
-
   end
 
   def byprice
@@ -52,7 +51,7 @@ class AppartsController < ApplicationController
       redirect_to  "/appart/#{@appart.id}"
     else
       @appart = "Submit"
-      render :new
+      render :host
     end
   end
 
