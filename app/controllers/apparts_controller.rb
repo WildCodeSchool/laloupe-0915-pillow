@@ -16,43 +16,42 @@ class AppartsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
     marker.lat appart.latitude
     marker.lng appart.longitude
-    end  
-
+    end
   end
 
- def byprice
-  if params[:format] != nil
-    @apparts = Appart.where(city: params[:format].titleize)
-    @byprice = @apparts.sort_by{|apt| apt.price}
-  else
-    @byprice = Appart.all.sort_by {|apt| apt.price}
+  def byprice
+    if params[:format] != nil
+      @apparts = Appart.where(city: params[:format].titleize)
+      @byprice = @apparts.sort_by{|apt| apt.price}
+    else
+      @byprice = Appart.all.sort_by {|apt| apt.price}
+    end
+    @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
+      marker.lat appart.latitude
+      marker.lng appart.longitude
+    end
   end
-   @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
-    marker.lat appart.latitude
-    marker.lng appart.longitude
-    end  
- end
 
   def byaccommodates
     if params[:format] != nil
-        @apparts = Appart.where(city: params[:format].titleize)
-        @byaccommodates = @apparts.sort_by{|apt| apt.accommodates}
-      else
-        @byaccommodates = Appart.all.sort_by {|apt| apt.accommodates}
-      end 
+      @apparts = Appart.where(city: params[:format].titleize)
+      @byaccommodates = @apparts.sort_by{|apt| apt.accommodates}
+    else
+      @byaccommodates = Appart.all.sort_by {|apt| apt.accommodates}
+    end
     @hash = Gmaps4rails.build_markers(@apparts) do |appart, marker|
-    marker.lat appart.latitude
-    marker.lng appart.longitude
-    end  
+      marker.lat appart.latitude
+      marker.lng appart.longitude
+    end
   end
-  
+
   def create
-  @appart = Appart.new(appart_params)
+    @appart = Appart.new(appart_params)
     if @appart.save
       redirect_to  "/appart/#{@appart.id}"
     else
       @appart = "Submit"
-      render :new
+      render :host
     end
   end
 
@@ -66,7 +65,22 @@ class AppartsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def appart_params
-    params.require(:appart).permit(:adress, :room_type, :property_type, :accommodates, :city, :title, :bedroom_nb, :beds_nb, :price, :zip_code, :country, :amenities, :images, :image1, :images2, :images3, :images4) 
+    params.require(:appart).permit(:adress,
+                                   :room_type,
+                                   :property_type,
+                                   :accommodates,
+                                   :city,
+                                   :title,
+                                   :bedroom_nb,
+                                   :beds_nb,
+                                   :price,
+                                   :zip_code,
+                                   :country,
+                                   :amenities,
+                                   :images,
+                                   :image1,
+                                   :images2,
+                                   :images3,
+                                   :images4)
   end
-
 end
