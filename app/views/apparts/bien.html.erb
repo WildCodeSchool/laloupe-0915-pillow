@@ -4,29 +4,25 @@
       <div class="row">
         <div class="col-md-12" style="height:30px"></div>
       </div>
+            <%=link_to image_tag(@appart.user.photos, :border => 0), {:action => 'show', :controller => 'users'}, {:class => 'dock-item'}%>
+            <h3>Bonjour je m'appelle <%=@appart.user.surname%> </h3><br>
 
-      <%= link_to "Hôte", user_path(@appart.user.id)%>
-            <img src="<%=@appart.user.photos%>" style="width:50px"/>
-            <p><%=@appart.user.surname%> </p><br>
-            </p>
-          
-          <h2>Description de mon bien</h2>
-          <p> insertion ici d'un champ de texte</p>
+          <h3>Description du bien</h3>
       <div class="row">
         <div class="col-lg-4" style="text-align:left">
           <ul>
-            <li>Type de logement: <%=@appart.property_type %></li>
-            <li>Capacité d'accueil: <%=@appart.accommodates%></li>
-            <li>Nombre de chambres: <%=@appart.bedroom_nb%></li>
-            <li>Nombre de lits: <%=@appart.beds_nb%></li>
+            <li><b>Type de logement:</b> <%=@appart.property_type %></li>
+            <li><b>Capacité d'accueil:</b> <%=@appart.accommodates%></li>
+            <li><b>Nombre de chambres:</b> <%=@appart.bedroom_nb%></li>
+            <li><b>Nombre de lits:</b> <%=@appart.beds_nb%></li>
           </ul>
         </div>
         <div class="col-lg-2">
         </div>
         <div class="col-lg-4" style="text-align:left">
           <ul>
-            <li>Fournitures: <%=@appart.amenities%></li>
-            <li>Adresse: <%=@appart.adress%></li>
+            <li><b>Fournitures:</b> <%=@appart.amenities%></li>
+            <li><b>Adresse:</b> <%=@appart.adress%></li>
           </ul>
           <div class="col-lg-2"></div>
         </div>
@@ -34,7 +30,12 @@
       <h2>Le prix</h2>
       <div class="row">
         <div class="col-md-12" style="text-align:left">
-          <p> <%=@appart.price%> </p>
+          <p> <%=@appart.price%> € la nuit </p>
+        </div>
+        <div class="row">
+          <div class="col-off-set-md-4" >
+            <button type="button" class="btn btn-success">Reserver !</button>
+          </div>
         </div>
       </div>
     </div>
@@ -44,10 +45,6 @@
       <img src="<%= @appart.images2%>" alt="" style= "width:90%"/>
       <img src="<%= @appart.images3%>" alt="" style= "width:90%"/>
       <img src="<%= @appart.images4%>" alt="" style= "width:90%"/>
-      <div class="row">
-        <div class="col-md-8">je valide les conditions et cgu.</div>
-        <div class="col-md-4">Reserver</div>
-      </div>
     </div>
 
   </div>
