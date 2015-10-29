@@ -1,14 +1,13 @@
 
 [class*="col-"] {
   background-color: white;
-  border: 1px solid grey;
   text-align: center;
   line-height: 40px;
 }
 /*style home*/
 #home {
   height: 700px;
-  background-image:url("http://lorempixel.com/1500/800");
+  background-image:url("https://a0.muscache.com/airbnb/static/landing_pages/pretzel/stills/paris-ac2c9c35b05b19e65af7c8eee89f2fae.jpg");
   background-size: cover;
 
 }
@@ -20,4 +19,3 @@
   height: 120px;
   padding-top: 60px;
 }
-
