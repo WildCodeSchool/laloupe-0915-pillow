@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users
-  root "apparts#index"
+  root "homes#homes"
   get "apparts/index" => 'apparts#index'
   get '/apparts/byprice' => "apparts#byprice"
   get '/apparts/byaccommodates' => "apparts#byaccommodates"
