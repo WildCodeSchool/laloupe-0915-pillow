@@ -1,43 +1,104 @@
-<h1> Become a Host</h1>
+<div class="block-header">
+    <h1> Become a Host</h1>
+</div>
+<div class="card">
+  <div class="card-header">
+    <h3>Les annonces avec de bonnes photos sont 40 fois plus efficaces !
+    Pour exporter une photo, allez sur ce <a href="http://imgur.com/">Lien</a> et copier l'url génrée dans les champs ci-dessous</h3>
+  </div>
+  <div class="card-body card-padding">
+  <%= form_for(@appart) do |f| %>
 
-<%= form_for(@appart) do |f| %>
-<h3>Les annonces avec de bonnes photos sont 40 fois plus efficaces !
-Pour exporter une photo, allez sur ce <a href="http://imgur.com/">Lien</a> et copier l'url génrée dans les champs ci-dessous</h3>
-  <%= f.label "Photo 1" %>
-  <%= f.text_field :images %> </br>
-  <%= f.label "Photos 2" %>
-  <%= f.text_field :images1 %> </br>
-  <%= f.label "Photo 3" %>
-  <%= f.text_field :images2 %> </br>
-  <%= f.label "Photo 4" %>
-  <%= f.text_field :images3 %> </br>
-  <%= f.label "Photo 5" %>
-  <%= f.text_field :images4 %> </br>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :images, :class => "form-control", :placeholder => "Photo 1" %> </br>
+      </div>
+    </div>
 
-  <%= f.label "Quelle loc" %>
-  <%= f.text_field :room_type %> </br>
-  <%= f.label "Type de bien" %>
-  <%= f.text_field :property_type %> </br>
-  <%= f.label "Nombre de personne" %>
-  <%= f.text_field :accommodates %></br>
-  <%= f.label "Ville" %>
-  <%= f.text_field :city %> </br>
-  <%= f.label "Titre" %>
-  <%= f.text_field :title %> </br>
-  <%= f.label "Nombre de chambre" %>
-  <%= f.text_field :bedroom_nb %> </br>
-  <%= f.label "Nombre de lit" %>
-  <%= f.text_field :beds_nb %> </br>
-  <%= f.label "Prix" %>
-  <%= f.text_field :price %> </br>
-  <%= f.label "Adresse" %>
-  <%= f.text_field :adress %> </br>
-  <%= f.label "Code postal" %>
-  <%= f.text_field :zip_code %> </br>
-  <%= f.label "Pays" %>
-  <%= f.text_field :country %> </br>
-  <%= f.label "Services en plus" %>
-  <%= f.text_field :amenities %> </br>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :images1, :class => "form-control", :placeholder => "Photo 2" %> </br>
+      </div>
+    </div>
 
-  <%= submit_tag 'Submit'%>
-<% end %>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :images2, :class => "form-control", :placeholder => "Photo 3" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :images3, :class => "form-control", :placeholder => "Photo 4" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :images4, :class => "form-control", :placeholder => "Photo 5" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :room_type, :class => "form-control", :placeholder => "Quelle loc" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :property_type, :class => "form-control", :placeholder => "Type de bien" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :accommodates, :class => "form-control", :placeholder => "Nombre de personne" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :city, :class => "form-control", :placeholder => "Ville" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :title, :class => "form-control", :placeholder => "Titre" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :bedroom_nb, :class => "form-control", :placeholder => "Nombre de chambre" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :beds_nb, :class => "form-control", :placeholder => "Nombre de lit" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :price, :class => "form-control", :placeholder => "Prix" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :adress, :class => "form-control", :placeholder => "Adresse" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :zip_code, :class => "form-control", :placeholder => "Code postal" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :country, :class => "form-control", :placeholder => "Pays" %> </br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="fg-line">
+        <%= f.text_field :amenities, :class => "form-control", :placeholder => "Services en plus" %> </br>
+      </div>
+    </div>
+
+
+    <%= submit_tag 'Submit', :class => "btn btn-info btn-sm m-t-10"%>
+  <% end %>
+  </div>
+</div>

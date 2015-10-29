@@ -1,0 +1,120 @@
+/* NEW.HTML.ERB - sessions*/
+/*login-navigation*/
+
+.login-navigation > li:hover{
+	    font-size: 12px;
+	    padding: 10px 20px;
+}
+
+.login-navigation a{
+	color: #fff;
+
+}
+
+/* NEW.HTML.ERB - passwords*/
+/*button*/
+
+.lc-block:not(.lcb-alt) .btn-login {
+	margin-top: 0;
+}
+
+/* SHOW.HTML.ERB*/
+/*profile_main*/
+
+.tab-nav.tn-justified > li {
+	color: #4285F4;
+	font-size: 22px;
+	padding: 15px 0 15px 0;
+}
+
+
+.fg-line{
+  height: 35px;
+}
+/* APPLICATION.HTML.ERB*/
+/*rating stars*/
+
+@import url(../font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    color:    #ccc;
+}
+input:-moz-placeholder, textarea:-moz-placeholder { 
+    color:    #ccc;
+}
+input::-moz-placeholder, textarea::-moz-placeholder { 
+    color:    #ccc;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+    color:    #ccc;
+}
+
+
+a.glyphicon-menu{
+  color: white; 
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+
+a.glyphicon-menu:visited{
+  color: white; 
+}
+
+#top-search-wrap input[type="text"] {
+  color: white;
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+
+/*button*/
+
+.logout{
+	margin-right: 10px;
+
+}
+.top-menu > li > a {
+	height: 28px;
+	margin-bottom: 5px;	
+	}
